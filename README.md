@@ -17,16 +17,25 @@ Laravel est accessible, puissant et fournit les outils requis pour les grandes a
 
 ## Installation de l'application
 
-Pour installer l'application faite un `clone` de l'application ou récupérer le avec `Git pull` dans votre console ou votre ***utilitaire***.
+Pour installer l'application faite un `clone` de l'application ou récupérer le avec `Git pull` dans votre ***console*** ou votre ***utilitaire***.
 Une fois le `pull` terminé, configurer votre variable d'environnement en modifiant le fichier `.env`
 
-Dans `.env`, mettre les valeurs suivants pour un serveur local sur `windows` : 
+Avant d'éditer le fichier `.env`, vous devez créer une base de donnée vide.
 
-<code>
-    DB_DATABASE=spartanLabour
+Ensuite dans `.env`, mettre les valeurs suivants pour un serveur local sur `windows` : 
+
+```
+    ...
+    DB_DATABASE=nom_de_la_base_de_donnee
     DB_USERNAME=root
     DB_PASSWORD=
-</code>
+    ...
+```
+
+Aller dans la racine du projet depuis la console et initier la `migration` de la base de donnée :
+
+`php artisan migrate`
+
 
 ## Laravel Sponsors
 
