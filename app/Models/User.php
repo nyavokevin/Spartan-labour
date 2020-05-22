@@ -5,12 +5,11 @@ namespace App\Models;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
-use Laravel\Passport\HasApiTokens;
 use Tymon\JWTAuth\Contracts\JWTSubject;
 
 class User extends Authenticatable implements JWTSubject
 {
-    use HasApiTokens, Notifiable;
+    use Notifiable;
 
     /**
      * The attributes that are mass assignable.
@@ -68,7 +67,7 @@ class User extends Authenticatable implements JWTSubject
 
     public function clients()
     {
-        return $this->hasOne('App\Models\Client', 'client_id');
+        return $this->hasOne('App\Models\Client');
     }
 
     /**
@@ -79,7 +78,7 @@ class User extends Authenticatable implements JWTSubject
 
     public function employes()
     {
-        return $this->hasOne('App\Models\Employe', 'employe_id');
+        return $this->hasOne('App\Models\Employe');
     }
 
     public function getJWTIdentifier()
