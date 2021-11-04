@@ -24,3 +24,11 @@ Route::prefix('auth')->group(function () {
     });
 });
 
+Route::group(['middleware' => 'auth:api'], function(){
+    // Users
+    Route::get('users/{id}', 'UserController@getProfile');
+    /*Route::get('users/{id}', 'UserController@admin')->middleware('isAdmin');
+    Route::get('users/{id}', 'UserController@employe')->middleware('isEmploye');
+    Route::get('users/{id}', 'UserController@superadmin')->middleware('isSuperAdmin');*/
+});
+
